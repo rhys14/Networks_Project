@@ -15,5 +15,4 @@ handler = http.server.SimpleHTTPRequestHandler
 
 with socketserver.TCPServer(("", port), handler) as server:
     print(f"Server started at http://localhost:{port}")
-    server.handle_request()
     server.serve_forever()
