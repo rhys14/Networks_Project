@@ -50,19 +50,14 @@ def main():
     else:
         http_port = 8000
         ws_port = 8765
-
-
     http_thread = threading.Thread(
         target=start_http_server,
         args=(http_port,),
         daemon=True
     )
-
     http_thread.start()
-
     # Run websocket server
     asyncio.run(websocket_server(ws_port))
-
 
 if __name__ == "__main__":
     main()

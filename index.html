@@ -19,11 +19,9 @@ ws.onopen = () => {
 ws.onmessage = (event) => {
     console.log("Received:", event.data);
 };
-ws.onclose = () => {
-    console.log("Disconnected");
-};
 function join(){
     ws.send("Client wants to join"); // TODO
+    window.location.href = "ensemble.html";
 }
 </script>
 </body>
