@@ -31,6 +31,7 @@ async def handle_client(websocket):
     finally:
         connected_clients.remove(websocket)
 
+
 async def websocket_server(port):
     async with websockets.serve(handle_client, "0.0.0.0", port):
         print("WebSocket server running on ws://localhost:", port)
