@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+const ws = new WebSocket("ws://localhost:50002");
+
+ws.onopen = () => {
+    console.log("Connected");
+    ws.send("hello");
+};
+
+ws.onmessage = (event) => {
+    console.log("Received:", event.data);
+};
+
+ws.onclose = () => {
+    console.log("Disconnected");
+};
+</script>
+</body>
+</html>
